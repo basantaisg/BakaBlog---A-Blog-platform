@@ -1,19 +1,10 @@
-import { Field, InputType } from '@nestjs/graphql';
-import { IsEmail, IsOptional, MinLength } from 'class-validator';
+import { Field, InputType, PartialType } from '@nestjs/graphql';
+import { createUserDto } from './create-user.dto';
 
 @InputType()
-export class UpdateUserDto {
+export class UpdateUserDto extends PartialType(createUserDto) {
   @Field()
-  @IsOptional()
-  username?: string;
-
-  @Field()
-  @IsEmail()
-  @IsOptional()
-  email?: string;
-
-  @Field()
-  @IsOptional()
-  @MinLength(8)
-  password?: string;
+  id: string;
 }
+
+//  this makes allowing optional to all the field except the id field!
