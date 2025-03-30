@@ -9,9 +9,11 @@ export class createUserDto {
 
   @Field()
   @IsEmail()
+  @IsNotEmpty()
   email: string;
 
   @Field()
   @MinLength(8)
+  @IsNotEmpty()
   password: string;
 }
