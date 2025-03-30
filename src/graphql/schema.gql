@@ -9,7 +9,7 @@ type User {
 }
 
 type Post {
-  id: ID!
+  post_id: ID!
   title: String!
   content: String!
   createdAt: DateTime!
@@ -47,7 +47,7 @@ input UpdatePostDto {
   title: String
   content: String
   userId: String
-  id: String!
+  post_id: String!
 }
 
 input createUserDto {

@@ -4,7 +4,7 @@ import { User } from 'src/user/model/user.model';
 @ObjectType()
 export class Post {
   @Field(() => ID)
-  id: string;
+  post_id: string;
 
   @Field()
   title: string;

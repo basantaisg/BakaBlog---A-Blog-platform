@@ -4,5 +4,5 @@ import { CreatePostDto } from './create-post.dto';
 @InputType()
 export class UpdatePostDto extends PartialType(CreatePostDto) {
   @Field()
-  id: string;
+  post_id: string;
 }

@@ -29,12 +29,12 @@ export class PostResolver {
   // update post!
   @Mutation(() => Post)
   async updatePost(@Args('input') input: UpdatePostDto) {
-    return this.postService.updatePost(input.id, input);
+    return this.postService.updatePost(input.post_id, input);
   }
 
   //  delete post!
   @Mutation(() => Post)
-  async deletePost(@Args('id') id: string) {
-    return this.postService.deletePost(id);
+  async deletePost(@Args('id') post_id: string) {
+    return this.postService.deletePost(post_id);
   }
 }

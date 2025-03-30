@@ -20,25 +20,25 @@ export class PostService {
   }
 
   //   get a post by id with user information!
-  async getPostById(id: string) {
+  async getPostById(post_id: string) {
     return this.prisma.post.findUnique({
-      where: { id },
+      where: { post_id },
       include: { user: true },
     });
   }
 
   //   update a post by it's id
-  async updatePost(id: string, updatePostDto: UpdatePostDto) {
+  async updatePost(post_id: string, updatePostDto: UpdatePostDto) {
     return this.prisma.post.update({
-      where: { id },
+      where: { post_id },
       data: updatePostDto,
     });
   }
 
   // deleting a user by its id
-  async deletePost(id: string) {
+  async deletePost(post_id: string) {
     return this.prisma.post.delete({
-      where: { id },
+      where: { post_id },
     });
   }
 }
