@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreatePostDto } from './dto/create-post.dto';
+import { UpdatePostDto } from './dto/update-post.dto';
 
 @Injectable()
 export class PostService {
@@ -26,6 +27,18 @@ export class PostService {
     });
   }
 
-  //   update a post by it's id with user information!
-  async updatePost(id: string) {}
+  //   update a post by it's id
+  async updatePost(id: string, updatePostDto: UpdatePostDto) {
+    return this.prisma.post.update({
+      where: { id },
+      data: updatePostDto,
+    });
+  }
+
+  // deleting a user by its id
+  async deletePost(id: string) {
+    return this.prisma.post.delete({
+      where: { id },
+    });
+  }
 }
