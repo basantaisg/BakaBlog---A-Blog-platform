@@ -34,7 +34,7 @@ export class PostResolver {
 
   //  delete post!
   @Mutation(() => Post)
-  async deletePost(@Args('id') post_id: string) {
+  async deletePost(@Args('post_id') post_id: string) {
     return this.postService.deletePost(post_id);
   }
 }

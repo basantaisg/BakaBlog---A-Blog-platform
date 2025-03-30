@@ -31,7 +31,7 @@ type Query {
 type Mutation {
   createPost(input: CreatePostDto!): Post!
   updatePost(input: UpdatePostDto!): Post!
-  deletePost(id: String!): Post!
+  deletePost(post_id: String!): Post!
   createUser(input: createUserDto!): User!
   updateUser(updateInput: UpdateUserDto!): User!
   deleteUser(id: String!): User!
