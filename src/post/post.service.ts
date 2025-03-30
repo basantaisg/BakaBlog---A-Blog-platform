@@ -16,14 +16,14 @@ export class PostService {
 
   //   get all post with user information!
   async getPosts() {
-    return this.prisma.post.findMany({ include: { User: true } });
+    return this.prisma.post.findMany({ include: { user: true } });
   }
 
   //   get a post by id with user information!
   async getPostById(id: string) {
     return this.prisma.post.findUnique({
       where: { id },
-      include: { User: true },
+      include: { user: true },
     });
   }
 
