@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@apollo/gateway": "^2.10.0",
+    "@nestjs/apollo": "^13.0.4",
+    "@nestjs/graphql": "^13.0.4",
+    "apollo-server-express": "^3.13.0",
+    "express": "^5.1.0",
+    "graphql": "^16.10.0"
+  }
+}
